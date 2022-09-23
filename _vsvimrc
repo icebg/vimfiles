@@ -1,0 +1,55 @@
+set clipboard=unnamed   "仅在VSvim里设置——默认的剪切寄存器"
+"jj映射Esc
+inoremap jj <Esc>
+" 使用;w快捷键保存内容
+nnoremap ;w :w<CR>
+inoremap ;w <ESC>:w<CR>
+" 使用;q快捷键退出vim
+nnoremap ;q <ESC>:q<CR>
+inoremap ;q <ESC>:q<CR>
+" 使用;;q强制退出vim
+nnoremap ;;q <ESC>:q!<CR>
+inoremap ;;q <ESC>:q!<CR>
+" 窗口切换  
+nnoremap <c-h> <c-w>h  
+nnoremap <c-l> <c-w>l  
+nnoremap <c-j> <c-w>j  
+nnoremap <c-k> <c-w>k  
+"将window增宽2个单位，w大于号
+nnoremap  <c-w>> <esc><c-w>2>
+"将window减小，w小于号
+nnoremap  <c-w>< <esc><c-w>2<
+"空格 一次击键选中当前word,两次击键选中WORD。小心：viwc这句话里，不要有任何多余的空格
+nnoremap <space> viw
+vnoremap <space> vviW
+""change vimrc"的首字母,竖直分屏，打开.vimrc进行编辑,记
+noremap ;cv <esc>:vsplit $MYVIMRC<cr>
+""source vimrc"的首字母，表示重读vimrc配置文件。
+noremap ;sv <esc>:source $MYVIMRC<cr>
+"H设置为行首，L设置为行尾
+nnoremap H ^
+nnoremap L $
+" 分割窗口后通过前缀键 "\" 和方向键 调整窗口大小
+nnoremap ;<Up>    :resize +5<CR>
+nnoremap ;<Down>  :resize -5<CR>
+nnoremap ;<Right> :vertical resize +5<CR>
+nnoremap ;<Left>  :vertical resize -5<CR>
+
+nnoremap <F10> <Esc>:tabnew<CR>    "指定 F10 键来新建标签页
+" 标签页导航 按键映射。silent 命令（sil[ent][!] {command}）用于安静地执行命令，既不显示正常的消息，也不会把它加进消息历史
+nnoremap ;1 1gt
+nnoremap ;2 2gt
+nnoremap ;3 3gt
+nnoremap ;4 4gt
+nnoremap ;5 5gt
+nnoremap ;6 6gt
+nnoremap ;7 7gt
+nnoremap ;8 8gt
+nnoremap ;9 9gt
+nnoremap ;0 :tablast<CR>	"最后一个标签页
+nnoremap <silent><s-tab> :tabprevious<CR>	"上一个标签页
+inoremap <silent><s-tab> <Esc>:tabprevious<CR>	
+nnoremap <silent><Tab>q :tabclose<CR>	"退出标签
+nnoremap <silent><Tab>n :tabnext<CR>	"下一个标签页
+nnoremap <silent><Tab>p :tabprevious<CR>	"上一个标签页
+

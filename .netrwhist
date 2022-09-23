@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='C:/Users/icebg'
+let g:netrw_dirhist_8='C:\Users\icebg'
+let g:netrw_dirhist_7='C:\Users\icebg\my-vimrc-file'
+let g:netrw_dirhist_6='D:\Program Files (x86)\Vim'
+let g:netrw_dirhist_5='C:/Users/icebg/hyf/LeetCode_my_solutions/LeetCodeHOT100'
+let g:netrw_dirhist_4='C:\Users\icebg\hyf\LeetCode_my_solutions\LeetCodeHOT100'
+let g:netrw_dirhist_3='C:/Users/icebg/hyf/LeetCode_my_solutions/LeetCodeHOT100'
+let g:netrw_dirhist_2='C:\Users\icebg\hyf\LeetCode_my_solutions\LeetCodeHOT100'
+let g:netrw_dirhist_1='C:/Users/icebg/hyf/LeetCode_my_solutions/LeetCodeHOT100'
+let g:netrw_dirhist_0='C:\Users\icebg\hyf\LeetCode_my_solutions\LeetCodeHOT100'
