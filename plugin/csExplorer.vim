@@ -1,3 +1,5 @@
+"使用方法: 在命令行键入 ':ColorSchemeExplorer'
+"功能的中文描述:可切换runtimepath/colors和~/vimfiles/colors所有配色
 "=============================================================================
 " Name Of File: csExplorer.vim
 "  Description: Color Scheme Explorer Vim Plugin
