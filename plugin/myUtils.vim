@@ -38,3 +38,55 @@ menu @Vimwiki.切换checkbox状态<tab>(;cb)                         :VimwikiTog
 
 # 显示菜单栏
 set guioptions+=m
+
+command! MyCommandUISelect call My_command_ui_select()
+menu @MyCmdSnippetsUI.选一个idx以执行某命令                     :MyCommandUISelect<CR>
+menu @MyCmdSnippetsUI.转到编辑Utils插件                     :execute('tabnew '..expand('%:p'))<CR>
+# menu @MyCmdSnippetsUI.输入一个msg以执行commit                 :CommitUI<CR>
+
+#我的UI函数
+var cmdstrs = [
+            \ 'git status',
+            \ 'git reflog',
+            \ 'git add . && git commit -m "..."',
+            \ 'git add .',
+            \ 'git push',
+            \ ]
+# 被My_command_ui_select调用
+def Print_mycmd_list()
+    var max_len = 0
+    var cmdstr: string
+    for idx in range(len(cmdstrs))
+        cmdstr = cmdstrs[idx]
+        if len(cmdstr) > max_len
+            max_len = len(cmdstr)
+        endif
+    endfor
+    for idx in range(len(cmdstrs))
+        cmdstr = cmdstrs[idx]
+        echo printf('%2d %-*s', idx + 1, max_len + 2, cmdstr)
+    endfor
+enddef
+# 被My_command_ui_select调用
+# 输入idx执行,异步执行第idx条指令,且右边开一个终端
+def My_async_run(idx: number)
+    var async_run_prefix = ":AsyncRun -mode=term -pos=right -col=50 "
+    execute async_run_prefix .. cmdstrs[idx]
+enddef
+
+def g:My_command_ui_select()
+    call Print_mycmd_list()
+    var idx: number = 0
+    var input_str = input('选择命令对应number 且 按<Enter>键 (空输入则啥也不做): ')
+    if input_str ==# ''
+        return
+    elseif idx > 9 
+        echo "\n"
+        echom '无效选择.'
+        return
+    else
+        idx = input_str->str2nr()
+        My_async_run(idx - 1)
+    endif
+enddef
+
