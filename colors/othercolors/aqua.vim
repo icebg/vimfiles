@@ -2,7 +2,6 @@
 " Maintainer:   tranquility@portugalmail.pt
 " Last Change:  6 Apr 2002
 
-
 " cool help screens
 " :he group-name
 " :he highlight-groups

@@ -1,0 +1,11 @@
+= 常用命令 = 
+Clap recent_files    最近文件们
+Clap filer           文件路径逐层查找(可以BackSpace) 
+Clap files           (当前目录)所有文件中模糊查找 
+Clap grep            关键词模糊查找
+Clap colors          搜索和切换配色方案 
+Clap command         搜索vim中已经注册的命令
+Clap providers       查找不记得的Clap命令
+Clap jumps           搜索 光标跳转位置
+Clap yanks           搜索 当前vim的剪贴板(堆栈stack) 
+Clap marks           搜索 各个mark标记位置

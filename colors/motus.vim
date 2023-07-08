@@ -34,6 +34,7 @@ highlight Special    guifg=Orange
 highlight Comment    guifg=#80a0ff
 "statement是关键字、语句
 highlight Statement  guifg=Yellow			gui=NONE
+"Type类型名称为绿色
 highlight Type		 guifg=Green			gui=NONE
 
 highlight VertSplit    gui=bold guifg=Grey25    guibg=Black
@@ -70,9 +71,9 @@ if has("unix")
 endif
 
 "我写的设置:以下目前都是针对GUI的
-"设置 折叠的行
+"设置 折叠的行 (橙色，显眼一点)
 highlight Folded		guibg=#181b14	guifg=Orange 
-"设置 行号颜色
+"设置 行号颜色(深灰底色，浅灰前景色)
 highlight LineNr		guibg=#414141	guifg=Grey
 "设置 光标选中的行号颜色
 highlight CursorLineNr	guibg=Black	guifg=#db0005
